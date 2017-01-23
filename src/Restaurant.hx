@@ -1,31 +1,20 @@
-package ;
+package;
+
 class Restaurant {
-    public function new() {
-        var t: CookableFood = new Tortilla();
-        var s: CookableFood = new Steak();
-        var l: RinsableFood = new Lettuce();
 
-        rinseFood(l);
+  public function new() {
+    var chef: Chef = new TacoChef();
 
-        prepareFood(l);
-        prepareFood(t);
-        prepareFood(s);
+    var t: Tortilla = new CornTortilla();
+    var s: CookableFood = new Steak();
+    var l: RinsableFood = new Lettuce();
+    var o: Food = new Onions();
 
-        cookFood(t);
-        cookFood(s);
-    }
+    chef.giveIngredient(t);
+    chef.giveIngredient(s);
+    chef.giveIngredient(l);
+    chef.giveIngredient(o);
 
-    private function cookFood(f:CookableFood):Void {
-        f.cook();
-        trace(f.getContents());
-        trace(Type.getClass(f));
-    }
-
-    private function prepareFood(f: Food): Void {
-        f.prepare();
-    }
-
-    private function rinseFood(f:RinsableFood):Void {
-        f.rinse();
-    }
+    chef.work();
+  }
 }
