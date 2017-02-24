@@ -1,3 +1,4 @@
+//Deprecated?
 package ;
 class Taco {
     public function new() {
@@ -25,9 +26,11 @@ class Taco {
         f.cook();
     }
 
+
     private function prepareFood(f: Food): Void {
         f.prepare();
     }
+
 
     private function rinseFood(f:RinsableFood):Void {
         f.rinse();

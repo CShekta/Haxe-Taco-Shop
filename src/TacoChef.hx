@@ -17,6 +17,7 @@ class TacoChef implements Chef {
       if (Std.is(i, RinsableFood)) {
         var r: RinsableFood = cast i;
         r.rinse();
+        return r;
       }
     }
 
@@ -28,9 +29,23 @@ class TacoChef implements Chef {
       if (Std.is(i, CookableFood)) {
         var c: CookableFood = cast i;
         c.cook();
+        return c;
       }
     }
+
+    var tortilla: Tortilla = null;
+    for (i in ingredients) {
+      if (Std.is(i, Tortilla)) {
+        tortilla = cast i;
+        tortilla.fold();
+        return tortilla;
+      }
+    }
+
     return null;
   }
 
 }
+
+//find tortillas and throw error if there isn't one
+//create taco class

@@ -5,6 +5,8 @@ class Onions implements Food {
 
     public function prepare():Void {
         trace("dicing");
+        Sys.sleep(3);
+
     }
 
     public function getContents():Food {
